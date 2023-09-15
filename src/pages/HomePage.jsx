@@ -6,6 +6,7 @@ import bogatkoImg from '../public/IMG_1351-min.jpg';
 import SubHeader from '../components/SubHeader';
 import Footer from '../components/Footer';
 import MainSections from '../components/MainSections';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   // eslint-disable-next-line no-unused-vars
@@ -43,9 +44,9 @@ const HomePage = () => {
           <p className="header-p theme-text">
             My name is Danny Bogatko and I'm web developer and programmer.
           </p>
-          <a href="projects" className="main-button btn-size-one">
+          <Link to="/projects" className="main-button btn-size-one">
             See my projects
-          </a>
+          </Link>
         </div>
         <div className="hero-img">
           <img src={bogatkoImg} alt="danny-bogatko" className="person-img" />

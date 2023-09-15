@@ -3,6 +3,7 @@ import { links } from '../data';
 // import { FaInstagram } from 'react-icons/fa';
 import logo from '../public/logo.png';
 import DarkModeSwitch from './DarkModeSwitch';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -18,9 +19,9 @@ const Navbar = () => {
             const { text, url, id } = link;
             return (
               <li key={id}>
-                <a href={url} className="nav-link theme-text">
+                <Link to={url} className="nav-link theme-text">
                   {text}
-                </a>
+                </Link>
               </li>
             );
           })}

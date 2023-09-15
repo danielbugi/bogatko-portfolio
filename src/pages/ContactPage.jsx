@@ -60,7 +60,12 @@ const ContactPage = () => {
                   console.log(item);
                   return (
                     <li key={item.id}>
-                      <a href="" className="theme-text">
+                      <a
+                        href=""
+                        className="theme-text"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {<item.icon />}
                       </a>
                     </li>

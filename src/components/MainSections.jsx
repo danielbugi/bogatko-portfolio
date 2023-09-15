@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import ProjectCard from '../components/ProjectsCard';
 import { featuredProject, social } from '../data';
+import { Link } from 'react-router-dom';
 
 const MainSections = () => {
   return (
@@ -29,7 +30,13 @@ const MainSections = () => {
         <div className="social-icons">
           {social.map((icon) => {
             return (
-              <a href={icon.url} key={icon.id} className="main-icon theme-text">
+              <a
+                href={icon.url}
+                key={icon.id}
+                className="main-icon theme-text"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {<icon.icon />}
               </a>
             );
@@ -65,9 +72,9 @@ const MainSections = () => {
             empowers developers to tackle a wide range of projects and
             contribute significantly to the world of technology.
           </p>
-          <a href="about" className="main-button btn-size-two">
+          <Link to="/about" className="main-button btn-size-two">
             Go to about
-          </a>
+          </Link>
         </div>
         <div className="project-section" id="projects">
           <h3 className="main-sec-header theme-text">My latest projects</h3>
@@ -76,9 +83,9 @@ const MainSections = () => {
               return <ProjectCard key={project.id} project={project} />;
             })}
           </div>
-          <a href="projects" className="main-button btn-size-two">
+          <Link to="/projects" className="main-button btn-size-two">
             All of the projects
-          </a>
+          </Link>
         </div>
       </div>
     </Wrapper>

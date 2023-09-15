@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import logo from '../public/logo.png';
 import { links, social } from '../data';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -29,9 +30,9 @@ const Footer = () => {
             const { text, url, id } = link;
             return (
               <li key={id}>
-                <a href={url} className="theme-text">
+                <Link to={url} className="theme-text">
                   {text}
-                </a>
+                </Link>
               </li>
             );
           })}
@@ -41,7 +42,12 @@ const Footer = () => {
           {social.map((link) => {
             return (
               <li key={link.id}>
-                <a href={link.url} className="theme-text">
+                <a
+                  href={link.url}
+                  className="theme-text"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <span>{<link.icon />}</span> {link.text}
                 </a>
               </li>
