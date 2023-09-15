@@ -1,8 +1,25 @@
 import { styled } from 'styled-components';
-import Footer from '../components/Footer';
+
 import { projectList } from '../data';
 import { Link } from 'react-router-dom';
+import { useThemeContext } from '../context/ThemeContext';
+import { useEffect } from 'react';
+
 const ProjectsPage = () => {
+  const { isDarkTheme } = useThemeContext();
+
+  useEffect(() => {
+    const darkTheme = document.querySelectorAll('.theme-selector');
+
+    darkTheme.forEach((el) => {
+      if (isDarkTheme) {
+        el.classList.add('dark-theme');
+      } else {
+        el.classList.remove('dark-theme');
+      }
+    });
+  }, [isDarkTheme]);
+
   return (
     <Wrapper>
       <section className="project-section">
@@ -16,7 +33,7 @@ const ProjectsPage = () => {
                     <div className="project-img">
                       <img src={img} alt="" />
                       <div className="background-gradient"></div>
-                      <div className="project-main-content theme-item">
+                      <div className="project-main-content theme-selector">
                         <h4 className="project-title">{title}</h4>
                         <p className="navigator-p">to page</p>
                       </div>
@@ -28,7 +45,7 @@ const ProjectsPage = () => {
           })}
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };

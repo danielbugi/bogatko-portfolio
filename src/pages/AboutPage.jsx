@@ -1,10 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 import { styled } from 'styled-components';
-import Footer from '../components/Footer';
+
 import image from '../public/about-images/image-1.png';
 import { techList } from '../data';
+import { useThemeContext } from '../context/ThemeContext';
+import { useEffect } from 'react';
 
 const AboutPage = () => {
+  const { isDarkTheme } = useThemeContext();
+
+  useEffect(() => {
+    const darkTheme = document.querySelectorAll('.theme-selector');
+
+    darkTheme.forEach((el) => {
+      if (isDarkTheme) {
+        el.classList.add('dark-theme');
+      } else {
+        el.classList.remove('dark-theme');
+      }
+    });
+  }, [isDarkTheme]);
+
   return (
     <Wrapper>
       <section className="section-about-main">
@@ -13,8 +29,8 @@ const AboutPage = () => {
             <img className="person-img" src={image} alt="danny bogatko" />
           </div>
           <div className="text-1-container">
-            <h2 className="about-header theme-text">About danny bogatko</h2>
-            <p className="paragraph theme-text">
+            <h2 className="about-header theme-selector">About danny bogatko</h2>
+            <p className="paragraph theme-selector">
               I'm Danny Bogatko, a freelance web developer and programmer
               located in the vibrant city of Ramat-Gan, Israel. My professional
               journey has been quite diverse. In the past, I worked as a
@@ -22,7 +38,7 @@ const AboutPage = () => {
               estate industries. This experience taught me the importance of
               effective communication and building strong client relationships.
             </p>
-            <p className="paragraph theme-text">
+            <p className="paragraph theme-selector">
               and programmer located in the vibrant city of Ramat-Gan, Is I'm
               Danny Bogatko, a freelance web developer rael. My professional
               journey has been quite diverse. In the past, I worked as a
@@ -30,7 +46,7 @@ const AboutPage = () => {
               estate industries. This experience taught me the importance of
               effective communication and building strong client relationships.
             </p>
-            <p className="paragraph theme-text">
+            <p className="paragraph theme-selector">
               In addition to my tech-savvy side, I have a deep understanding of
               the financial market, particularly in the realm of
               cryptocurrencies and investments. I approach investment
@@ -44,7 +60,7 @@ const AboutPage = () => {
         </div>
         <div className="about-two-sec">
           <div className="text-2-container">
-            <p className="paragraph-two theme-text">
+            <p className="paragraph-two theme-selector">
               Innovation and technology, powered by JavaScript/ES6, Python,
               HTML5, and CSS3, create modern web experiences. Node.js, Express,
               and MongoDB deliver robust backends. React, React-Router, and
@@ -52,7 +68,7 @@ const AboutPage = () => {
               streamline data interactions. Github ensures collaboration and
               version control. These tools shape the digital landscape.
             </p>
-            <p className="paragraph-two theme-text">
+            <p className="paragraph-two theme-selector">
               The ability to develop frontend, backend, and full-stack
               applications is a valuable skill set. Frontend developers create
               engaging user interfaces using HTML, CSS, and JavaScript, while
@@ -67,22 +83,24 @@ const AboutPage = () => {
           </div>
           <div className="tech-box">
             <div className="tech-skills">
-              <h4 className="tech-header theme-text">skills</h4>
+              <h4 className="tech-header theme-selector">skills</h4>
               {techList.map((item) => {
                 return (
                   <li key={item.id}>
                     <img src={item.img} alt="tech" className="tech-icon" />
-                    <span className="tech-text theme-text">{item.text}</span>
+                    <span className="tech-text theme-selector">
+                      {item.text}
+                    </span>
                   </li>
                 );
               })}
             </div>
             <div className="tech-box-note">
-              <p className="p-note theme-text">
+              <p className="p-note theme-selector">
                 This is the list of the main program languages and development
                 skills. I'm also familiar with many more tools and libraries
                 that fall under the main categories. If you want know more,{' '}
-                <a href="bogatkodaniel@gmail.com" className="theme-text">
+                <a href="bogatkodaniel@gmail.com" className="theme-selector">
                   contact here!
                 </a>
               </p>
@@ -90,7 +108,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };

@@ -9,20 +9,20 @@ const MainSections = () => {
       <div className="container-block"></div>
       <div className="navigation-container">
         <div className="navigation-text">
-          <h3 className="theme-text">Danny Bogatko</h3>
-          <h5 className="theme-text">programmer & web developer</h5>
-          <p className="theme-text">
+          <h3 className="theme-selector">Danny Bogatko</h3>
+          <h5 className="theme-selector">programmer & web developer</h5>
+          <p className="theme-selector">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque,
             dolorem?
           </p>
           <div className="navigations">
             <a href="#about">
-              <span className="span-line theme-item"></span>
-              <span className="span-link theme-text">About me</span>
+              <span className="span-line theme-selector"></span>
+              <span className="span-link theme-selector">About me</span>
             </a>
             <a href="#projects">
-              <span className="span-line theme-item"></span>
-              <span className="span-link theme-text">Projects</span>
+              <span className="span-line theme-selector"></span>
+              <span className="span-link theme-selector">Projects</span>
             </a>
           </div>
         </div>
@@ -33,7 +33,7 @@ const MainSections = () => {
               <a
                 href={icon.url}
                 key={icon.id}
-                className="main-icon theme-text"
+                className="main-icon theme-selector"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -46,13 +46,13 @@ const MainSections = () => {
 
       <div className="main-wrapper">
         <div className="about-section" id="about">
-          <h3 className="main-sec-header theme-text">Experienced with:</h3>
-          <p className="main-p theme-text">
+          <h3 className="main-sec-header theme-selector">Experienced with:</h3>
+          <p className="main-p theme-selector">
             JS/Es6, Python, HTML5, CSS3, NodeJS, Express, MongoDB, React,
             React-Router, Headless CSM, Styled-Components, Axios, FIREBASE,
             Github
           </p>
-          <p className="main-p theme-text">
+          <p className="main-p theme-selector">
             Innovation and technology, powered by JavaScript/ES6, Python, HTML5,
             and CSS3, create modern web experiences. Node.js, Express, and
             MongoDB deliver robust backends. React, React-Router, and
@@ -60,7 +60,7 @@ const MainSections = () => {
             streamline data interactions. Github ensures collaboration and
             version control. These tools shape the digital landscape.
           </p>
-          <p className="main-p theme-text">
+          <p className="main-p theme-selector">
             The ability to develop frontend, backend, and full-stack
             applications is a valuable skill set. Frontend developers create
             engaging user interfaces using HTML, CSS, and JavaScript, while
@@ -72,18 +72,21 @@ const MainSections = () => {
             empowers developers to tackle a wide range of projects and
             contribute significantly to the world of technology.
           </p>
-          <Link to="/about" className="main-button btn-size-two">
+          <Link to="/about" className="main-button btn-size-two theme-selector">
             Go to about
           </Link>
         </div>
         <div className="project-section" id="projects">
-          <h3 className="main-sec-header theme-text">My latest projects</h3>
+          <h3 className="main-sec-header theme-selector">My latest projects</h3>
           <div className="wrapper">
             {featuredProject.map((project) => {
               return <ProjectCard key={project.id} project={project} />;
             })}
           </div>
-          <Link to="/projects" className="main-button btn-size-two">
+          <Link
+            to="/projects"
+            className="main-button btn-size-two theme-selector"
+          >
             All of the projects
           </Link>
         </div>
@@ -173,14 +176,17 @@ const Wrapper = styled.section`
 
   .span-line {
     display: block;
-    background: #000000;
+    background: var(--black);
     width: 30px;
     height: 2px;
     margin-right: 1rem;
   }
 
-  .theme-item.dark-theme {
-    background: #ffffff;
+  .span-line.dark-theme {
+    background: var(--white);
+  }
+  .span-link.dark-theme {
+    color: var(--white);
   }
 `;
 

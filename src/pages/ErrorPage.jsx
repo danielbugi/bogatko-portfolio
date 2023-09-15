@@ -1,8 +1,23 @@
 import { styled } from 'styled-components';
-import Footer from '../components/Footer';
 import errorImg from '../public/error.png';
+import { useThemeContext } from '../context/ThemeContext';
+import { useEffect } from 'react';
 
 const ErrorPage = () => {
+  const { isDarkTheme } = useThemeContext();
+
+  useEffect(() => {
+    const darkTheme = document.querySelectorAll('.theme-selector');
+
+    darkTheme.forEach((el) => {
+      if (isDarkTheme) {
+        el.classList.add('dark-theme');
+      } else {
+        el.classList.remove('dark-theme');
+      }
+    });
+  }, [isDarkTheme]);
+
   return (
     <Wrapper>
       <section className="error-page">
@@ -24,7 +39,7 @@ const ErrorPage = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };

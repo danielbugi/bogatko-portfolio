@@ -15,8 +15,8 @@ const ProjectsCard = ({ project }) => {
           </div>
         </div>
         <div className="card-description">
-          <h4 className="project-title theme-text">{title}</h4>
-          <p className="project-desc theme-text">{text}</p>
+          <h4 className="project-title theme-selector">{title}</h4>
+          <p className="project-desc theme-selector">{text}</p>
         </div>
       </Link>
     </Wrapper>
@@ -51,25 +51,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
-    /* .card-header-inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem;
-      height: 40%;
-      border-radius: 5px 5px 0 0;
-      background: #1c1c1c; */
-    /* .logo {
-        /* height: 100%; */
-    /* display: flex;
-        align-items: center;
-        gap: 0.2rem;
-        img {
-          height: 1.5rem;
-          width: 1.5rem;
-        }
-      } */
-
     h4 {
       font-size: 20px;
     }
@@ -95,18 +76,17 @@ const Wrapper = styled.div`
     .author {
       display: block;
       margin-bottom: 1rem;
-      color: #4d4d4d;
+      color: var(--dark-grey);
       font-size: 0.9rem;
     }
   }
 
   .project-desc {
-    color: #4d4d4d;
+    color: var(--dark-grey);
     font-size: 0.9rem;
   }
   .project-desc.dark-theme {
-    color: #c2c2c2;
-    font-size: 0.9rem;
+    color: var(--light-grey);
   }
 
   .project-title {

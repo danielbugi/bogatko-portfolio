@@ -1,57 +1,75 @@
 /* eslint-disable react/no-unescaped-entities */
 import { styled } from 'styled-components';
-import Footer from '../components/Footer';
+
 import image from '../public/about-images/image-1.png';
 import { social } from '../data';
+import { useEffect } from 'react';
+import { useThemeContext } from '../context/ThemeContext';
 
 const ContactPage = () => {
+  const { isDarkTheme } = useThemeContext();
+
+  useEffect(() => {
+    const darkTheme = document.querySelectorAll('.theme-selector');
+
+    darkTheme.forEach((el) => {
+      if (isDarkTheme) {
+        el.classList.add('dark-theme');
+      } else {
+        el.classList.remove('dark-theme');
+      }
+    });
+  }, [isDarkTheme]);
+
   return (
     <Wrapper>
       <section className="contact-section">
         <div className="section-wrapper">
           <div className="get-in-touch">
-            <h1 className="get-in-touch-h theme-text">Get in touch</h1>
-            <p className="get-in-touch-p theme-text">
+            <h1 className="get-in-touch-h theme-selector">Get in touch</h1>
+            <p className="get-in-touch-p theme-selector">
               Send a general message or details of a project you'd like me to be
               a part of and I'll get back to you as soon as possible.
             </p>
             <form action="" className="contact-form">
-              <h4 className="form-h theme-text">about you</h4>
+              <h4 className="form-h theme-selector">about you</h4>
               <div className="input-wrap">
-                <label htmlFor="" className="theme-text">
+                <label htmlFor="" className="theme-selector">
                   Your name
                 </label>
                 <input type="text" />
               </div>
               <div className="input-wrap">
-                <label htmlFor="" className="theme-text">
+                <label htmlFor="" className="theme-selector">
                   Email
                 </label>
                 <input type="email" />
               </div>
 
               <div className="input-wrap">
-                <label htmlFor="" className="theme-text">
+                <label htmlFor="" className="theme-selector">
                   Message
                 </label>
                 <textarea type="text" />
               </div>
-              <button className="main-button btn-size-two">Send</button>
+              <button className="main-button btn-size-two theme-selector">
+                Send
+              </button>
             </form>
           </div>
 
           <div className="contact-about">
-            <h3 className=" theme-text">About Danny Bogatko</h3>
+            <h3 className=" theme-selector">About Danny Bogatko</h3>
             <div>
               <img src={image} alt="danny bogatko" className="about-img" />
-              <p className="contact-about-p theme-text">
+              <p className="contact-about-p theme-selector">
                 Innovation and technology, powered by JavaScript/ES6, Python,
                 HTML5, and CSS3, create modern web experiences. Node.js,
                 Express, and MongoDB deliver robust backends. React,
                 React-Router, and Styled-Components craft dynamic frontends.
               </p>
 
-              <p className="contact-about-mail theme-text">
+              <p className="contact-about-mail theme-selector">
                 Email: <a href="">bogatkodaniel@gmail.com</a>
               </p>
 
@@ -62,7 +80,7 @@ const ContactPage = () => {
                     <li key={item.id}>
                       <a
                         href=""
-                        className="theme-text"
+                        className="theme-selector"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -76,7 +94,7 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };
@@ -172,11 +190,9 @@ const Wrapper = styled.main`
       text-decoration: revert;
     }
   }
-  .contact-about-mail.dark-theme {
-    a {
-      color: #c300ff;
-      text-decoration: revert;
-    }
+
+  .contact-about-mail.dark-theme a {
+    color: #c300ff;
   }
 
   .social-contact {

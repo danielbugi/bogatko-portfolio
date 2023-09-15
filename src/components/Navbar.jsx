@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <Wrapper>
+    <Wrapper className="theme-selector">
       <div className="nav-wrapper">
         <div className="logo">
           <img src={logo} alt="" />
-          <h1 className="theme-text">DB Digital</h1>
+          <h1 className="logo-header theme-selector">DB Digital</h1>
         </div>
 
         <ul className="nav-links">
@@ -19,7 +19,7 @@ const Navbar = () => {
             const { text, url, id } = link;
             return (
               <li key={id}>
-                <Link to={url} className="nav-link theme-text">
+                <Link to={url} className="nav-link theme-selector">
                   {text}
                 </Link>
               </li>

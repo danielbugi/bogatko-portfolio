@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper className="theme-selector">
       <div className="footer-wrapper">
         <div className="reserved-box">
           <div className="logo">
@@ -13,15 +13,15 @@ const Footer = () => {
             <h1 className="theme-text">DB Digital</h1>
           </div>
           <div className="reserved-des">
-            <p className="theme-text">
+            <p className="theme-selector">
               Built by <span>Danny Bogatko.</span>
             </p>
-            <p className="theme-text">
+            <p className="theme-selector">
               Powered by <span>Danny Bogatko.</span>
             </p>
           </div>
 
-          <p className="theme-text">&copy; 2023. All Rights Reserved.</p>
+          <p className="theme-selector">&copy; 2023. All Rights Reserved.</p>
         </div>
 
         <div className="links">
@@ -30,7 +30,7 @@ const Footer = () => {
             const { text, url, id } = link;
             return (
               <li key={id}>
-                <Link to={url} className="theme-text">
+                <Link to={url} className="theme-selector">
                   {text}
                 </Link>
               </li>
@@ -38,13 +38,13 @@ const Footer = () => {
           })}
         </div>
         <div className="social">
-          <h5 className="theme-text footer-link-header">Get in touch</h5>
+          <h5 className="theme-selector footer-link-header">Get in touch</h5>
           {social.map((link) => {
             return (
               <li key={link.id}>
                 <a
                   href={link.url}
-                  className="theme-text"
+                  className="theme-selector"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -85,14 +85,14 @@ const Wrapper = styled.footer`
         font-size: 0.8rem;
         font-weight: 400;
         span {
-          color: #aeadad;
+          color: var(--light-grey);
         }
       }
     }
     .links {
       h5 {
         margin-bottom: 1rem;
-        color: #aeadad;
+        color: var(--light-grey);
       }
       li {
         padding: 0.2rem 0;
@@ -102,7 +102,7 @@ const Wrapper = styled.footer`
     .social {
       h5 {
         margin-bottom: 1rem;
-        color: #aeadad;
+        color: var(--light-grey);
       }
       li {
         padding: 0.2rem 0;

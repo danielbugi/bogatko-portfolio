@@ -4,14 +4,15 @@ import { useEffect, useState } from 'react';
 import { animatedHeader } from '../data';
 import bogatkoImg from '../public/IMG_1351-min.jpg';
 import SubHeader from '../components/SubHeader';
-import Footer from '../components/Footer';
 import MainSections from '../components/MainSections';
 import { Link } from 'react-router-dom';
+import { useThemeContext } from '../context/ThemeContext';
 
 const HomePage = () => {
   // eslint-disable-next-line no-unused-vars
   const [words, setWords] = useState(animatedHeader);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { isDarkTheme } = useThemeContext();
 
   const nextSlide = () => {
     setCurrentIndex((oldIndex) => {
@@ -19,6 +20,18 @@ const HomePage = () => {
       return result;
     });
   };
+
+  useEffect(() => {
+    const darkTheme = document.querySelectorAll('.theme-selector');
+
+    darkTheme.forEach((el) => {
+      if (isDarkTheme) {
+        el.classList.add('dark-theme');
+      } else {
+        el.classList.remove('dark-theme');
+      }
+    });
+  }, [isDarkTheme]);
 
   useEffect(() => {
     let sliderId = setInterval(() => {
@@ -37,14 +50,17 @@ const HomePage = () => {
     <Wrapper>
       <section className="section-hero">
         <div className="header">
-          <h2 className="main-header theme-text">Hello, there!</h2>
+          <h2 className="main-header theme-selector">Hello, there!</h2>
 
           <SubHeader words={words} currentIndex={currentIndex} />
 
-          <p className="header-p theme-text">
+          <p className="header-p theme-selector">
             My name is Danny Bogatko and I'm web developer and programmer.
           </p>
-          <Link to="/projects" className="main-button btn-size-one">
+          <Link
+            to="/projects"
+            className="main-button btn-size-one theme-selector"
+          >
             See my projects
           </Link>
         </div>
@@ -56,13 +72,12 @@ const HomePage = () => {
       <MainSections />
 
       <div className="period"></div>
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.main`
-  overflow-x: hidden;
   .section-hero {
     display: flex;
     justify-content: center;

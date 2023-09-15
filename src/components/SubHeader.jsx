@@ -4,11 +4,11 @@ import { styled } from 'styled-components';
 const SubHeader = ({ words, currentIndex }) => {
   return (
     <Wrapper className="sub-header-con">
-      <h4 className="theme-text">I create:</h4>
+      <h4 className="sub-header theme-selector">I create:</h4>
       {words.map((word, wordsIndex) => {
         return (
           <h4
-            className="words-changing theme-text"
+            className="sub-header-change theme-selector"
             key={wordsIndex}
             style={{
               transform: `translateY(-${55 * (currentIndex - wordsIndex)}px`,
@@ -35,21 +35,26 @@ const Wrapper = styled.div`
 
   h4 {
     font-size: 40px;
-    color: #000;
+    color: var(--black);
     font-weight: 500;
     /* font-family: 'DM Serif Display', serif; */
   }
 
-  .words-changing {
+  .sub-header.dark-theme {
+    color: var(--white);
+  }
+
+  .sub-header-change {
     height: 100%;
     font-weight: 500;
     display: inline-block;
     position: absolute;
     left: 12rem;
-    color: #000;
+    color: var(--black);
   }
-  .words-changing.dark-theme {
-    color: #ffffff;
+
+  .sub-header-change.dark-theme {
+    color: var(--white);
   }
 `;
 export default SubHeader;
