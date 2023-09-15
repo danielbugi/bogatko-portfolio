@@ -6,9 +6,7 @@ import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import project01 from './public/projects/project01-min.png';
 import project02 from './public/projects/project02-min.png';
-import project03 from './public/projects/project03-min.png';
 import project04 from './public/projects/project04-min.png';
-import project05 from './public/projects/project05-min.png';
 
 import pr1 from './public/projects-full/Screenshot_1-min.png';
 import pr2 from './public/projects-full/Screenshot_2-min.png';
@@ -94,17 +92,17 @@ export const links = [
   },
   {
     text: 'Projects',
-    url: '/projects',
+    url: 'projects',
     id: 2,
   },
   {
     text: 'About',
-    url: '/about',
+    url: 'about',
     id: 3,
   },
   {
     text: 'get in touch',
-    url: '/contact',
+    url: 'contact',
     id: 4,
   },
 ];

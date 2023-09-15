@@ -43,7 +43,7 @@ const HomePage = () => {
           <p className="header-p theme-text">
             My name is Danny Bogatko and I'm web developer and programmer.
           </p>
-          <a href="/projects" className="main-button btn-size-one">
+          <a href="projects" className="main-button btn-size-one">
             See my projects
           </a>
         </div>

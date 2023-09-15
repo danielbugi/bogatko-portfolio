@@ -65,7 +65,7 @@ const MainSections = () => {
             empowers developers to tackle a wide range of projects and
             contribute significantly to the world of technology.
           </p>
-          <a href="/about" className="main-button btn-size-two">
+          <a href="about" className="main-button btn-size-two">
             Go to about
           </a>
         </div>
@@ -76,7 +76,7 @@ const MainSections = () => {
               return <ProjectCard key={project.id} project={project} />;
             })}
           </div>
-          <a href="/projects" className="main-button btn-size-two">
+          <a href="projects" className="main-button btn-size-two">
             All of the projects
           </a>
         </div>
