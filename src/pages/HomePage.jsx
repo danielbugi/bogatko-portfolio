@@ -73,7 +73,7 @@ const HomePage = () => {
 
       <MainSections />
 
-      <div className="period"></div>
+      {/* <div className="period"></div> */}
       {/* <Footer /> */}
     </Wrapper>
   );
@@ -172,7 +172,7 @@ const Wrapper = styled.main`
   }
   @media screen and (max-width: 650px) {
     .section-hero {
-      height: 20vh;
+      min-height: 15vh;
     }
     .header-p {
       font-size: 15px;

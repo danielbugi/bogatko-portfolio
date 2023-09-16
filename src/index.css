@@ -4,9 +4,9 @@
 /* font-family: 'DM Serif Display', serif; */
 
 :root {
-  --bg-color-1: rgb(255, 255, 255);
-  --bg-color-2: rgb(204, 220, 246);
-  --bg-color-3: rgb(250, 215, 215);
+  --bg-color-1: rgb(183, 208, 245);
+  --bg-color-2: rgb(223, 221, 221);
+  --bg-color-3: rgb(241, 176, 176);
 
   --bg-dark-1: rgb(7, 44, 34);
   --bg-dark-2: rgb(5, 49, 64);
@@ -224,7 +224,7 @@ section {
 }
 
 .gradient {
-  --size: 1500px;
+  --size: 1000px;
   --speed: 50s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
 
