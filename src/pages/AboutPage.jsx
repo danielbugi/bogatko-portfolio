@@ -215,5 +215,51 @@ const Wrapper = styled.main`
       }
     }
   }
+
+  @media screen and (max-width: 1060px) {
+    .section-about-main {
+      width: 100vw;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .about-header,
+    .paragraph {
+      padding-left: 0;
+    }
+    .paragraph {
+      font-size: 22px;
+      letter-spacing: 0.1rem;
+      font-weight: 300;
+    }
+    .person-img {
+      margin-right: 2rem;
+      margin-bottom: 1rem;
+    }
+    .paragraph-two {
+      font-size: 22px;
+      padding-right: 2rem;
+      letter-spacing: 0.1rem;
+      font-weight: 300;
+    }
+    .about-two-sec {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .section-about-main {
+      padding: 0 2rem;
+    }
+    .paragraph,
+    .paragraph-two {
+      font-size: 16px;
+      padding: 0;
+    }
+    .tech-box {
+      display: block;
+      width: 80%;
+      /* margin: 0 auto; */
+    }
+  }
 `;
 export default AboutPage;

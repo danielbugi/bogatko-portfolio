@@ -32,32 +32,31 @@ const ProjectsPage = () => {
                 <div className="project-main-inner">
                   <div className="project-img">
                     <img src={img} alt="" />
+                  </div>
+                  <div className="project-main-content theme-selector">
+                    <h4 className="project-title">{title}</h4>
 
-                    <div className="project-main-content theme-selector">
-                      <h4 className="project-title">{title}</h4>
+                    <TechMini techs={techs} />
 
-                      <TechMini techs={techs} />
+                    <p>{text}</p>
 
-                      <p>{text}</p>
-
-                      <div className="projects-buttons">
-                        <Link
-                          to={url}
-                          className="main-button btn-size-two theme-selector"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Website Demo
-                        </Link>
-                        <Link
-                          to={githubUrl}
-                          className="main-button btn-size-two theme-selector"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          github
-                        </Link>
-                      </div>
+                    <div className="projects-buttons">
+                      <Link
+                        to={url}
+                        className="main-button btn-size-two theme-selector"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Website Demo
+                      </Link>
+                      <Link
+                        to={githubUrl}
+                        className="main-button btn-size-two theme-selector"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        github
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -83,28 +82,27 @@ const Wrapper = styled.main`
   }
   .projects-wrapper {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
   }
 
   .project-main {
     height: 45vh;
     width: 33vw;
     margin: 1rem;
-    /* transition: all 0.3s ease-in-out; */
-    /* padding: 2rem; */
+    position: relative;
+    overflow: hidden;
   }
 
-  .project-main:nth-of-type(3),
+  /* .project-main:nth-of-type(3),
   .project-main:nth-of-type(5) {
     width: 16vw;
-  }
+  } */
 
   .project-main-inner {
     height: 100%;
     width: 100%;
-    position: relative;
   }
 
   /* flex-grow: 4  .project-main:nth-of-type(4) {
@@ -118,30 +116,14 @@ const Wrapper = styled.main`
     position: absolute;
     top: 0;
     left: 0;
-    /* z-index: -1; */
-    /* filter: grayscale(100%); */
+
     border-radius: 5px;
     img {
       object-fit: cover;
       width: 100%;
-      /* object-position: center; */
       height: 100%;
     }
   }
-  /* .background-gradient {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgb(179, 179, 179);
-    background: linear-gradient(
-      0deg,
-      rgb(0, 0, 0) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    z-index: 1;
-  } */
 
   .project-main-content {
     position: absolute;
@@ -151,7 +133,7 @@ const Wrapper = styled.main`
     backdrop-filter: blur(4px);
     height: 100%;
     width: 100%;
-
+    border-radius: 5px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -183,6 +165,35 @@ const Wrapper = styled.main`
   .project-main:hover .project-main-content {
     bottom: 0;
     left: 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    .project-section {
+      width: 100vw;
+      padding: 0 2rem;
+    }
+    .projects-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .project-main {
+      height: 22vh;
+      width: 100%;
+    }
+    .project-main-inner {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .project-main-content {
+      position: static;
+      border-radius: 0 0 5px 5px;
+      p {
+        display: none;
+      }
+    }
+    .project-img {
+      position: static;
+    }
   }
 `;
 export default ProjectsPage;

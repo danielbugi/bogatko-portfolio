@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const MainSections = () => {
   return (
     <Wrapper className="main-container">
-      <div className="container-block"></div>
       <div className="navigation-container">
         <div className="navigation-text">
           <h3 className="theme-selector">Danny Bogatko</h3>
@@ -187,6 +186,37 @@ const Wrapper = styled.section`
   }
   .span-link.dark-theme {
     color: var(--white);
+  }
+
+  @media screen and (max-width: 1550px) {
+    .navigation-container {
+      width: 35%;
+    }
+    .main-wrapper {
+      width: 65%;
+    }
+  }
+
+  @media screen and (max-width: 930px) {
+    width: 100vw;
+    padding: 0 2rem;
+    .about-section {
+      padding: 0;
+      padding-left: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+
+    .navigation-container {
+      position: static;
+      width: 100%;
+    }
+    .main-wrapper {
+      width: 100%;
+    }
   }
 `;
 

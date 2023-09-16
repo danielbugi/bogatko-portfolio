@@ -23,36 +23,37 @@ const Footer = () => {
 
           <p className="theme-selector">&copy; 2023. All Rights Reserved.</p>
         </div>
-
-        <div className="links">
-          <h5 className="text footer-link-header">Website</h5>
-          {links.map((link) => {
-            const { text, url, id } = link;
-            return (
-              <li key={id}>
-                <Link to={url} className="theme-selector">
-                  {text}
-                </Link>
-              </li>
-            );
-          })}
-        </div>
-        <div className="social">
-          <h5 className="theme-selector footer-link-header">Get in touch</h5>
-          {social.map((link) => {
-            return (
-              <li key={link.id}>
-                <a
-                  href={link.url}
-                  className="theme-selector"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span>{<link.icon />}</span> {link.text}
-                </a>
-              </li>
-            );
-          })}
+        <div className="footer-links">
+          <div className="links">
+            <h5 className="text footer-link-header">Website</h5>
+            {links.map((link) => {
+              const { text, url, id } = link;
+              return (
+                <li key={id}>
+                  <Link to={url} className="theme-selector">
+                    {text}
+                  </Link>
+                </li>
+              );
+            })}
+          </div>
+          <div className="social">
+            <h5 className="theme-selector footer-link-header">Get in touch</h5>
+            {social.map((link) => {
+              return (
+                <li key={link.id}>
+                  <a
+                    href={link.url}
+                    className="theme-selector"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span>{<link.icon />}</span> {link.text}
+                  </a>
+                </li>
+              );
+            })}
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -89,7 +90,9 @@ const Wrapper = styled.footer`
         }
       }
     }
+
     .links {
+      margin-right: 2rem;
       h5 {
         margin-bottom: 1rem;
         color: var(--light-grey);
@@ -100,6 +103,7 @@ const Wrapper = styled.footer`
       }
     }
     .social {
+      margin-right: 2rem;
       h5 {
         margin-bottom: 1rem;
         color: var(--light-grey);
@@ -108,6 +112,30 @@ const Wrapper = styled.footer`
         padding: 0.2rem 0;
         font-size: 0.9rem;
       }
+    }
+  }
+  .footer-links {
+    display: flex;
+    width: 17rem;
+  }
+
+  @media screen and (max-width: 880px) {
+    height: auto;
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .footer-links {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .reserved-box {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
     }
   }
 `;

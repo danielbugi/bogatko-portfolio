@@ -225,5 +225,23 @@ const Wrapper = styled.main`
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .contact-section {
+      width: 100vw;
+      padding: 0 2rem;
+    }
+    .section-wrapper {
+      flex-direction: column-reverse;
+    }
+    .contact-about {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .get-in-touch {
+      width: 100%;
+      padding: 0;
+    }
+  }
 `;
 export default ContactPage;

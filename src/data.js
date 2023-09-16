@@ -4,10 +4,6 @@ import programming from './public/svgs/undraw_programming.svg';
 
 import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-import project01 from './public/projects/project01-min.png';
-import project02 from './public/projects/project02-min.png';
-import project04 from './public/projects/project04-min.png';
-
 import pr1 from './public/projects-full/Screenshot_1-min.png';
 import pr2 from './public/projects-full/Screenshot_2-min.png';
 import pr3 from './public/projects-full/Screenshot_3-min.png';
@@ -139,22 +135,42 @@ export const article = [
 export const featuredProject = [
   {
     id: 1,
-    title: 'E-Commerce furniture store',
-    img: project01,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est praesentium omnis veritatis repellendus, reiciendis nesciunt soluta minus amet eaque consequatur mollitia iure. Necessitatibus nam autem suscipit nisi enim, vel nostrum totam, maiores adipisci quidem placeat omnis quibusdam laborum nihil explicabo.',
+    title: 'JS Track Racing Game',
+    techs: ['javascript', 'canvas2d', 'HTML'],
+    img: pr1,
+    url: 'https://bejewelled-semolina-23f0bd.netlify.app/',
+    githubUrl: 'https://github.com/danielbugi/track-road-game',
+    text: 'To explore Javascript and programming fundamentals, I created a racing game using Javascript and canvas2d.',
   },
   {
     id: 2,
-    title: 'Noble Clothing E-commerce clothing store',
-    img: project02,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est praesentium omnis veritatis repellendus, reiciendis nesciunt soluta minus amet eaque consequatur mollitia iure. Necessitatibus nam autem suscipit nisi enim, vel nostrum totam, maiores adipisci quidem placeat omnis quibusdam laborum nihil explicabo.',
+    title: 'Comfy Stroe E-Commerce furniture store',
+    techs: [
+      'javascript',
+      'CSS',
+      'HTML',
+      'react',
+      'auth0',
+      'stripe-api',
+      'axios',
+      'styled components',
+      'netlify CLI',
+      'airtable CMS',
+      'FormSpree',
+    ],
+    url: 'https://testing-comfy-db.netlify.app',
+    githubUrl: 'https://github.com/danielbugi/react-comfy-store',
+    img: pr4,
+    text: 'E-commerce furniture website, with payment checkout and authentication users.',
   },
-
   {
     id: 3,
-    title: 'JS Track Racing Game',
-    img: project04,
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est praesentium omnis veritatis repellendus, reiciendis nesciunt soluta minus amet eaque consequatur mollitia iure. Necessitatibus nam autem suscipit nisi enim, vel nostrum totam, maiores adipisci quidem placeat omnis quibusdam laborum nihil explicabo.',
+    title: 'Parallax Landing Page',
+    techs: ['javascript', 'CSS', 'HTML'],
+    url: 'https://profound-paprenjak-0f5e83.netlify.app/',
+    githubUrl: 'https://github.com/danielbugi/leaf-parralax-effect',
+    img: pr3,
+    text: 'Cool moving leaves parallax effect',
   },
 ];
 

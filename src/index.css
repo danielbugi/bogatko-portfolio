@@ -5,8 +5,8 @@
 
 :root {
   --bg-color-1: rgb(255, 255, 255);
-  --bg-color-2: rgb(60, 135, 255);
-  --bg-color-3: rgb(246, 162, 162);
+  --bg-color-2: rgb(204, 220, 246);
+  --bg-color-3: rgb(250, 215, 215);
 
   --bg-dark-1: rgb(7, 44, 34);
   --bg-dark-2: rgb(5, 49, 64);
@@ -74,6 +74,7 @@ a {
   text-decoration: none;
   outline: none;
   color: var(--black);
+  text-transform: capitalize;
 }
 a.dark-theme {
   color: var(--white);
@@ -101,7 +102,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--nav-color);
+  background: var(--con-bg-2);
   backdrop-filter: blur(4px);
   z-index: 998;
 }
@@ -191,7 +192,7 @@ section {
 /* Background css */
 
 .background {
-  background-color: var(--light-grey);
+  background-color: var(--white);
   position: absolute;
   top: 0;
   left: 0;
