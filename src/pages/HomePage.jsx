@@ -49,23 +49,25 @@ const HomePage = () => {
   return (
     <Wrapper>
       <section className="section-hero">
-        <div className="header">
-          <h2 className="main-header theme-selector">Hello, there!</h2>
+        <div className="hero-wrapper">
+          <div className="header">
+            <h2 className="main-header theme-selector">Hello, there!</h2>
 
-          <SubHeader words={words} currentIndex={currentIndex} />
+            <SubHeader words={words} currentIndex={currentIndex} />
 
-          <p className="header-p theme-selector">
-            My name is Danny Bogatko and I'm web developer and programmer.
-          </p>
-          <Link
-            to="/projects"
-            className="main-button btn-size-one theme-selector"
-          >
-            See my projects
-          </Link>
-        </div>
-        <div className="hero-img">
-          <img src={bogatkoImg} alt="danny-bogatko" className="person-img" />
+            <p className="header-p theme-selector">
+              My name is Danny Bogatko and I'm web developer and programmer.
+            </p>
+            <Link
+              to="/projects"
+              className="main-button btn-size-one theme-selector"
+            >
+              See my projects
+            </Link>
+          </div>
+          <div className="hero-img">
+            <img src={bogatkoImg} alt="danny-bogatko" className="person-img" />
+          </div>
         </div>
       </section>
 
@@ -79,6 +81,11 @@ const HomePage = () => {
 
 const Wrapper = styled.main`
   .section-hero {
+    /* border-top: 4px solid rgba(255, 255, 255, 0.432); */
+    margin: 0 auto;
+  }
+
+  .hero-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,14 +94,12 @@ const Wrapper = styled.main`
     overflow: hidden;
     margin: 8rem auto;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
-    /* border-top: 4px solid rgba(255, 255, 255, 0.432); */
+    border-radius: 5px;
   }
   .header {
     height: 100%;
     width: 70%;
-    background-color: rgba(205, 205, 205, 0.3);
-    /* backdrop-filter: sepia(10%); */
-    /* border: 5px solid rgba(255, 255, 255, 0.088); */
+    background-color: var(--con-bg-1);
     padding: 2rem;
     letter-spacing: 1px;
     line-height: 1;

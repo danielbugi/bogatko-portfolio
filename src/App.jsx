@@ -10,6 +10,7 @@ import Background from './components/Background';
 import SingleProject from './pages/SingleProject';
 import ErrorPage from './pages/ErrorPage';
 import Footer from './components/Footer';
+import Cursor from './components/Cursor';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Router>
         <Navbar />
         <Background />
-
+        <Cursor />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />

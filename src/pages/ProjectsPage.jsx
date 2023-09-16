@@ -4,6 +4,7 @@ import { projectList } from '../data';
 import { Link } from 'react-router-dom';
 import { useThemeContext } from '../context/ThemeContext';
 import { useEffect } from 'react';
+import TechMini from '../components/TechMini';
 
 const ProjectsPage = () => {
   const { isDarkTheme } = useThemeContext();
@@ -25,21 +26,41 @@ const ProjectsPage = () => {
       <section className="project-section">
         <div className="projects-wrapper">
           {projectList.map((project) => {
-            const { title, img, id } = project;
+            const { title, img, id, techs, url, githubUrl, text } = project;
             return (
               <article className="project-main" key={id}>
-                <Link to={`/projects/${id}`}>
-                  <div className="project-main-inner">
-                    <div className="project-img">
-                      <img src={img} alt="" />
-                      <div className="background-gradient"></div>
-                      <div className="project-main-content theme-selector">
-                        <h4 className="project-title">{title}</h4>
-                        <p className="navigator-p">to page</p>
+                <div className="project-main-inner">
+                  <div className="project-img">
+                    <img src={img} alt="" />
+
+                    <div className="project-main-content theme-selector">
+                      <h4 className="project-title">{title}</h4>
+
+                      <TechMini techs={techs} />
+
+                      <p>{text}</p>
+
+                      <div className="projects-buttons">
+                        <Link
+                          to={url}
+                          className="main-button btn-size-two theme-selector"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Website Demo
+                        </Link>
+                        <Link
+                          to={githubUrl}
+                          className="main-button btn-size-two theme-selector"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          github
+                        </Link>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </article>
             );
           })}
@@ -71,6 +92,7 @@ const Wrapper = styled.main`
     height: 45vh;
     width: 33vw;
     margin: 1rem;
+    /* transition: all 0.3s ease-in-out; */
     /* padding: 2rem; */
   }
 
@@ -96,8 +118,8 @@ const Wrapper = styled.main`
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    filter: grayscale(100%);
+    /* z-index: -1; */
+    /* filter: grayscale(100%); */
     border-radius: 5px;
     img {
       object-fit: cover;
@@ -124,21 +146,27 @@ const Wrapper = styled.main`
   .project-main-content {
     position: absolute;
     bottom: -100%;
-    left: 0;
-    background: rgba(0, 94, 255, 0.399);
+    left: -100%;
+    background: rgba(206, 214, 230, 0.399);
     backdrop-filter: blur(4px);
-    height: 8rem;
+    height: 100%;
     width: 100%;
-    z-index: 2;
-    color: #fff;
+
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    /* z-index: 2; */
+    /* transition: all 0.5s ease-in-out; */
+    /* z-index: 10; */
+  }
 
-    .project-title {
-    }
-    .navigator-p {
+  .projects-buttons {
+    width: 100%;
+
+    a {
+      display: inline-block;
+      margin-right: 1rem;
     }
   }
 
@@ -149,11 +177,12 @@ const Wrapper = styled.main`
   .project-main:hover {
     box-shadow: var(--box-shadow);
   }
-  .project-main:hover .project-img {
+  /* .project-main:hover .project-img {
     filter: none;
-  }
+  } */
   .project-main:hover .project-main-content {
     bottom: 0;
+    left: 0;
   }
 `;
 export default ProjectsPage;

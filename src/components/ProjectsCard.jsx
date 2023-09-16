@@ -26,12 +26,12 @@ const ProjectsCard = ({ project }) => {
 const Wrapper = styled.div`
   height: 20rem;
   margin-bottom: 4rem;
-
   border-radius: 5px;
 
   .card-link-wrapper {
     display: flex;
     padding: 1.5rem;
+    align-items: center;
   }
 
   &:hover {
@@ -58,12 +58,14 @@ const Wrapper = styled.div`
   .project-img {
     height: 15rem;
     width: 15rem;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
+
     filter: grayscale(100%);
     img {
       object-fit: cover;
       height: 100%;
       width: 100%;
+      border-radius: 5px;
     }
   }
 

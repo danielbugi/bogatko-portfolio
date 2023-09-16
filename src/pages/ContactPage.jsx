@@ -59,37 +59,39 @@ const ContactPage = () => {
           </div>
 
           <div className="contact-about">
-            <h3 className=" theme-selector">About Danny Bogatko</h3>
-            <div>
-              <img src={image} alt="danny bogatko" className="about-img" />
-              <p className="contact-about-p theme-selector">
-                Innovation and technology, powered by JavaScript/ES6, Python,
-                HTML5, and CSS3, create modern web experiences. Node.js,
-                Express, and MongoDB deliver robust backends. React,
-                React-Router, and Styled-Components craft dynamic frontends.
-              </p>
+            <div className="contact-about-wrapper">
+              <h3 className=" theme-selector">About Danny Bogatko</h3>
+              <div className="hor-wrapper">
+                <img src={image} alt="danny bogatko" className="about-img" />
+                <p className="contact-about-p theme-selector">
+                  Innovation and technology, powered by JavaScript/ES6, Python,
+                  HTML5, and CSS3, create modern web experiences. Node.js,
+                  Express, and MongoDB deliver robust backends. React,
+                  React-Router, and Styled-Components craft dynamic frontends.
+                </p>
+              </div>
 
               <p className="contact-about-mail theme-selector">
                 Email: <a href="">bogatkodaniel@gmail.com</a>
               </p>
+            </div>
 
-              <div className="social-contact">
-                {social.map((item) => {
-                  console.log(item);
-                  return (
-                    <li key={item.id}>
-                      <a
-                        href=""
-                        className="theme-selector"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {<item.icon />}
-                      </a>
-                    </li>
-                  );
-                })}
-              </div>
+            <div className="social-contact">
+              {social.map((item) => {
+                console.log(item);
+                return (
+                  <li key={item.id}>
+                    <a
+                      href=""
+                      className="theme-selector"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {<item.icon />}
+                    </a>
+                  </li>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -115,6 +117,9 @@ const Wrapper = styled.main`
 
   .get-in-touch {
     padding-right: 10rem;
+    h1 {
+      margin-bottom: 2rem;
+    }
     p {
       margin-bottom: 2rem;
     }
@@ -125,8 +130,9 @@ const Wrapper = styled.main`
     display: block;
     padding: 1rem;
     border-radius: 5px;
-    background-color: rgba(205, 205, 205, 0.3);
+    background-color: var(--con-bg-1);
     backdrop-filter: blur(4px);
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
     h4 {
       margin-bottom: 1rem;
     }
@@ -166,9 +172,21 @@ const Wrapper = styled.main`
   /* Contact about */
   .contact-about {
     width: 40%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--con-bg-1);
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
     h3 {
       margin-bottom: 2rem;
     }
+  }
+
+  .contact-about-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   .about-img {
