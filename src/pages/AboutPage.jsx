@@ -38,14 +38,7 @@ const AboutPage = () => {
               estate industries. This experience taught me the importance of
               effective communication and building strong client relationships.
             </p>
-            <p className="paragraph theme-selector">
-              and programmer located in the vibrant city of Ramat-Gan, Is I'm
-              Danny Bogatko, a freelance web developer rael. My professional
-              journey has been quite diverse. In the past, I worked as a
-              salesperson, gaining valuable experience in the insurance and real
-              estate industries. This experience taught me the importance of
-              effective communication and building strong client relationships.
-            </p>
+
             <p className="paragraph theme-selector">
               In addition to my tech-savvy side, I have a deep understanding of
               the financial market, particularly in the realm of
