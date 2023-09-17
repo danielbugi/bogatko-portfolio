@@ -197,6 +197,12 @@ const Wrapper = styled.main`
   }
 
   @media screen and (max-width: 420px) {
+    .project-main {
+      height: auto;
+    }
+    .project-main-inner {
+      height: auto;
+    }
     .project-title {
       font-size: 12px;
       margin-bottom: 0.5rem;
@@ -205,7 +211,7 @@ const Wrapper = styled.main`
       font-size: 16px;
     }
     .project-img {
-      height: 20rem;
+      height: 10rem;
     }
   }
 `;
