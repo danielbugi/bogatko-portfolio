@@ -177,7 +177,7 @@ const Wrapper = styled.main`
     }
     .project-main {
       height: 22vh;
-      width: 100%;
+      width: 90%;
     }
     .project-main-inner {
       display: flex;
@@ -193,6 +193,19 @@ const Wrapper = styled.main`
     }
     .project-img {
       position: static;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .project-title {
+      font-size: 12px;
+      margin-bottom: 0.5rem;
+    }
+    .main-button {
+      font-size: 16px;
+    }
+    .project-img {
+      height: 20rem;
     }
   }
 `;

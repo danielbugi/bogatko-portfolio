@@ -7,7 +7,7 @@ const TechMini = ({ techs }) => {
       {techs.map((item) => {
         return (
           <div className="tech-mini theme-selector" key={item}>
-            {item}
+            <span>{item}</span>
           </div>
         );
       })}
@@ -28,6 +28,17 @@ const Wrapper = styled.div`
 
   .tech-mini.dark-theme {
     background: var(--dark-grey);
+  }
+
+  @media screen and (max-width: 420px) {
+    .tech-mini {
+      font-size: 12px;
+    }
+    @media screen and (max-width: 420px) {
+      .main-button {
+        font-size: 16px;
+      }
+    }
   }
 `;
 export default TechMini;
