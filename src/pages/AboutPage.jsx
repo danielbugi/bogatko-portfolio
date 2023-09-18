@@ -118,7 +118,7 @@ const Wrapper = styled.main`
     padding: 0 4rem;
   }
   .about-one-sec {
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
   }
   .about-header {
     padding-left: 25rem;
@@ -252,6 +252,9 @@ const Wrapper = styled.main`
       display: block;
       width: 80%;
       /* margin: 0 auto; */
+    }
+    .about-one-sec {
+      margin-bottom: 5rem;
     }
   }
 `;

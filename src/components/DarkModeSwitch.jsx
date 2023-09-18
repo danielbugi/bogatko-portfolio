@@ -51,15 +51,10 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function CustomizedSwitches() {
-  const { toggleDarkTheme, isDarkTheme } = useThemeContext();
-
-  console.log(isDarkTheme);
+  const { toggleDarkTheme } = useThemeContext();
 
   return (
     <FormGroup>
-      {/* <FormControlLabel
-        control={}
-      /> */}
       <MaterialUISwitch defaultChecked onClick={toggleDarkTheme} />
     </FormGroup>
   );

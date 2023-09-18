@@ -34,11 +34,6 @@ const Wrapper = styled.div`
     .tech-mini {
       font-size: 12px;
     }
-    @media screen and (max-width: 420px) {
-      .main-button {
-        font-size: 16px;
-      }
-    }
   }
 `;
 export default TechMini;
