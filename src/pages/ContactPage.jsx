@@ -3,11 +3,52 @@ import { styled } from 'styled-components';
 
 import image from '../public/about-images/image-1.png';
 import { social } from '../data';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useThemeContext } from '../context/ThemeContext';
+import axios from 'axios';
 
 const ContactPage = () => {
   const { isDarkTheme } = useThemeContext();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newMessage = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/api/createMessage',
+        newMessage
+      );
+      if (response.status === 200) {
+        alert('Message was sent successfully');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      }
+    } catch (err) {
+      if (err) {
+        alert('Something went wrong, try again later.');
+      }
+    }
+  };
 
   useEffect(() => {
     const darkTheme = document.querySelectorAll('.theme-selector');
@@ -31,28 +72,49 @@ const ContactPage = () => {
               Send a general message or details of a project you'd like me to be
               a part of and I'll get back to you as soon as possible.
             </p>
-            <form action="" className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <h4 className="form-h theme-selector">about you</h4>
               <div className="input-wrap">
                 <label htmlFor="" className="theme-selector">
                   Your name
                 </label>
-                <input type="text" />
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                />
               </div>
               <div className="input-wrap">
                 <label htmlFor="" className="theme-selector">
                   Email
                 </label>
-                <input type="email" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                />
               </div>
 
               <div className="input-wrap">
                 <label htmlFor="" className="theme-selector">
                   Message
                 </label>
-                <textarea type="text" />
+                <textarea
+                  type="text"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleFormChange}
+                  required
+                />
               </div>
-              <button className="main-button btn-size-two theme-selector">
+              <button
+                type="submit"
+                className="main-button btn-size-two theme-selector"
+              >
                 Send
               </button>
             </form>
@@ -78,11 +140,10 @@ const ContactPage = () => {
 
             <div className="social-contact">
               {social.map((item) => {
-                console.log(item);
                 return (
                   <li key={item.id}>
                     <a
-                      href=""
+                      href={item.url}
                       className="theme-selector"
                       target="_blank"
                       rel="noreferrer"
