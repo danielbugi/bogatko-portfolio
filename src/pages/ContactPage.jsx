@@ -32,7 +32,7 @@ const ContactPage = () => {
     };
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/createMessage',
+        'https://backend-dbdigital.onrender.com/api/createMessage',
         newMessage
       );
       if (response.status === 200) {
