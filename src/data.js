@@ -79,7 +79,6 @@ export const animatedHeader = [
   'Programs',
   'Landing Pages',
   'Blogs',
-  'Banana',
 ];
 
 export const links = [

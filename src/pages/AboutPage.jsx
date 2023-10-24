@@ -256,6 +256,9 @@ const Wrapper = styled.main`
     .about-one-sec {
       margin-bottom: 5rem;
     }
+    .person-img {
+      display: none;
+    }
   }
 `;
 export default AboutPage;

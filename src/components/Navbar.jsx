@@ -9,10 +9,12 @@ const Navbar = () => {
   return (
     <Wrapper className="theme-selector">
       <div className="nav-wrapper">
-        <div className="logo">
-          <img src={logo} alt="" />
-          <h1 className="logo-header theme-selector">DB Digital</h1>
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img src={logo} alt="" />
+            <h1 className="logo-header theme-selector">DB Digital</h1>
+          </div>
+        </Link>
 
         <ul className="nav-links">
           {links.map((link) => {

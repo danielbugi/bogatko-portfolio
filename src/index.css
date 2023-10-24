@@ -224,7 +224,7 @@ section {
 }
 
 .gradient {
-  --size: 1000px;
+  --size: 2000px;
   --speed: 50s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
 
@@ -242,9 +242,9 @@ section {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
-@media (min-width: 720px) {
+@media (max-width: 720px) {
   .gradient {
-    --size: 2000px;
+    animation: rotate 0s !important;
   }
 }
 

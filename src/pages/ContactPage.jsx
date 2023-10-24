@@ -252,7 +252,7 @@ const Wrapper = styled.main`
 
   .about-img {
     height: 10rem;
-    width: 6rem;
+    width: 6.5rem;
     float: left;
     margin-right: 1rem;
     margin-bottom: 1rem;
