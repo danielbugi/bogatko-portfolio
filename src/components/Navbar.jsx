@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { links } from '../data';
-// import { FaInstagram } from 'react-icons/fa';
 import logo from '../public/logo.png';
 import DarkModeSwitch from './DarkModeSwitch';
-import { Link } from 'react-router-dom';
+import HamburgerBtb from './HamburgerBtb';
 
 const Navbar = () => {
   return (
     <Wrapper className="theme-selector">
       <div className="nav-wrapper">
+        <HamburgerBtb />
+
         <Link to="/">
           <div className="logo">
             <img src={logo} alt="" />
@@ -120,15 +122,21 @@ const Wrapper = styled.nav`
   }
 
   @media screen and (max-width: 800px) {
-    .logo {
+    /* .logo {
       display: none;
-    }
+    } */
     ul li {
       margin: 0 5px;
     }
 
     .nav-link {
       font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav-links {
+      display: none;
     }
   }
 `;

@@ -66,7 +66,7 @@ export const social = [
     id: '2',
   },
   {
-    url: 'https://www.instagram.com/danny_bogatko',
+    url: 'https://www.linkedin.com/in/daniel-bogatko-278a12269/',
     icon: FaLinkedin,
     text: 'linkedIn',
     id: '3',

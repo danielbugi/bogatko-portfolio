@@ -34,7 +34,7 @@ const Cursor = () => {
         '.link',
       ]}
       outerStyle={{
-        zIndex: '997',
+        zIndex: '899',
         background: backgroundGradient,
       }}
     />

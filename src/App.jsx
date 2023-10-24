@@ -13,6 +13,7 @@ import Cursor from './components/Cursor';
 
 import { useEffect } from 'react';
 import axios from 'axios';
+import Sidebar from './components/Sidebar';
 
 function App() {
   const countTraffic = async () => {
@@ -31,6 +32,7 @@ function App() {
     <div className="app">
       <Router>
         <Navbar />
+        <Sidebar />
         <Background />
         <Cursor />
         <Routes>
